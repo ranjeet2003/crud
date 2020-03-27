@@ -1,6 +1,13 @@
 <?php
     class User extends CI_controller{
+        function index(){
+            $this->load->model('User_model');
+            $users= $this->User_model->all();
+            $data=array();
+            $data['users']=$users; 
 
+            $this->load->view('list',$data);
+        }
 
         function create(){
             $this->load->model('User_model');
