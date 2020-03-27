@@ -48,10 +48,17 @@
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/user/index');
             }
-
-
-
-           
+        }
+        function delete($userId){
+            $this->load->model('User_model');
+            $user=$this->User_model->getUser($userId);
+            if(empty($user)){
+                $this->session->set_flashdata('failure','Record not found in database');
+                redirect(base_url().'index.php/user/index');
+            }
+            $this->User_model->deleteUser($userId);
+            $this->session->set_flashdata('success','Record deleted successfully');
+            redirect(base_url().'index.php/user/index');
         }
     }
 ?>

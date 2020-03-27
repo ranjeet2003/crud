@@ -17,6 +17,10 @@
             $this->db->where('user_id',$userId);
             $this->db->update('users',$formArray);//update users set name==
         }
+        function deleteUser($userId){
+            $this->db->where('user_id',$userId);
+            $this->db->delete('users');//delete from users where user_id=
+        }
     }
 
 ?>

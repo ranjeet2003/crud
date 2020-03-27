@@ -14,6 +14,27 @@
     </div>
         <div class="container" style="padding-top: 10px;">
         <div class="row">
+            <div class=col-md-12>
+            <?php
+                $success= $this->session->userdata('success');
+                if($success !=""){
+                    ?>
+                <div class= "alert alert-success"><?php echo $success?></div>
+                    <?php
+                }
+            ?>
+             <?php
+                $failure= $this->session->userdata('failure');
+                if($failure !=""){
+                    ?>
+                <div class= "alert alert-success"><?php echo $failure?></div>
+                    <?php
+                }
+            ?>
+
+            </div>
+        </div>
+        <div class="row">
              <div class= "col-md-8">
                 <div class="row">
                     <div class="col-6"> <h3>View User Data</h3></div>
