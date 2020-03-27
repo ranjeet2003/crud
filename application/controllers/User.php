@@ -13,6 +13,9 @@
             $this->load->model('User_model');
             $this->form_validation->set_rules('name','Name','required');
             $this->form_validation->set_rules('email','Email','required|valid_email');
+            $this->form_validation->set_rules('mobile','Mobile','required');
+            $this->form_validation->set_rules('dob','Date','required');
+            $this->form_validation->set_rules('pin','PIN','required');
             if($this->form_validation->run()== false){
                  $this->load->view('create');
             }else{
@@ -20,7 +23,12 @@
                 $formArray= array();
                 $formArray['name']=$this->input->post('name');
                 $formArray['email']=$this->input->post('email');
-                $formArray['created_at']=date('Y-m-d');
+                $formArray['mobile']=$this->input->post('mobile');
+                $formArray['dob']=$this->input->post('dob');
+                $formArray['pin']=$this->input->post('pin');
+
+
+              //  $formArray['created_at']=date('Y-m-d');
                 $this->User_model->create($formArray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/user/index');

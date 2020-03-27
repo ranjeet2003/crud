@@ -49,12 +49,15 @@
         
         <div class="row">
         
-        <div class="col-md-8">
+        <div class="col-md-12">
             <table class="table table-striped" >
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Mobile</th>
+                    <th>D.O.B.</th>
+                    <th>pin</th>
                     <th width="70">Edit</th>
                     <th width="100">Delete</th>
                 </tr>
@@ -63,6 +66,9 @@
                 <td><?php echo $user['user_id'] ?></td>
                 <td><?php echo $user['name'] ?></td>
                 <td><?php echo $user['email'] ?></td>
+                <td><?php echo $user['mobile'] ?></td>
+                <td><?php echo $user['dob'] ?></td>
+                <td><?php echo $user['pin'] ?></td>
                 <td>
                     <a href="<?php echo base_url().'index.php/user/edit/'.$user['user_id']?>" class="btn btn-primary">Edit</a>
                 </td>
