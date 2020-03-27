@@ -12,9 +12,13 @@
             <a href="#" class="navbar-brand">CRUD App</a>
         </div>
     </div>
-        <div class="container">
+        <div class="container" style="padding-top: 10px;">
+        <h3>Create User</h3>
+        <hr>
+        <form name="createUser"action="<?php echo base_url().'index.php/user/create';?>">
             <div class="row">
-                <div class="col-md-12">
+                
+                <div class="col-md-6">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" name="name" value="" class="form-control">
@@ -28,7 +32,9 @@
                         <a href="" class="btn-secondary btn">Cancel</a>
                     </div>
                 </div>
+               
             </div>
+            </form>
         </div>
     
 </body>
