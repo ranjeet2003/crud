@@ -15,17 +15,19 @@
         <div class="container" style="padding-top: 10px;">
         <h3>Create User</h3>
         <hr>
-        <form name="createUser"action="<?php echo base_url().'index.php/user/create';?>">
+        <form method ="post" name="createUser"action="<?php echo base_url().'index.php/user/create';?>">
             <div class="row">
                 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="name" value="" class="form-control">
+                        <input type="text" name="name" value="<?php echo set_value('name');?>" class="form-control">
+                        <?php echo form_error('name');?>
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input type="text" name="email" value="" class="form-control">
+                        <input type="text" name="email" value="<?php echo set_value('email');?>" class="form-control">
+                        <?php echo form_error('email');?>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary">Create</button>
